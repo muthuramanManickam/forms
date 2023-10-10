@@ -1,0 +1,29 @@
+<p>cwc works!</p>
+
+<button pButton type="button" [routerLink]="'cwcc/india'" (click)="temaIndia()">India</button>&nbsp;
+<button pButton type="button" [routerLink]="'cwcc/aus'">Aus</button>&nbsp;
+<button pButton type="button" [routerLink]="'cwcc/ban'">Ban</button>&nbsp;
+
+
+<p *ngIf='router.url.includes("india")'>Your are a india team</p>
+<p *ngIf='router.url.includes("aus")'>Your are a aus team</p>
+<p *ngIf='router.url.includes("ban")'>Your are a ban team</p>
+
+
+<!-- <button pButton label="Submit"></button> -->
+<div *ngFor="let product of items">
+    <h3>{{ product.name }}</h3>
+    <h3>{{product.cup}}</h3>
+</div>
+
+<button type="button" (click)="loadIndiaData()">Load India Data</button>
+<button type="button" (click)="loadAustraliaData()">Load Australia Data</button>
+
+<p *ngIf="selectedCountry">You selected: {{ selectedCountry }}</p>
+
+<!-- <div *ngFor="let item of items">
+  <p>{{ item.name }}</p>
+</div> -->
+<a routerLink="/cwcc" class="button fancy-button">
+    <em class="material-icons">shopping_cart</em>Checkout
+</a>

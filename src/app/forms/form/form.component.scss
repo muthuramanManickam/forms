@@ -1,0 +1,15 @@
+.my-form-group{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+}
+.form-label{
+    width: 7%;
+}

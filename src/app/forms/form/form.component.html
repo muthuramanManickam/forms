@@ -1,0 +1,56 @@
+<p>form works!</p>
+<form [formGroup]="myForm" class="my-form-group">
+    <div class="form-group">
+        <label class="form-label">Name :</label>
+        <input pInputText type="text" formControlName="name">
+    </div>
+    <button pButton (click)="onSubmit()">Submit</button>
+</form>
+
+
+
+<form [formGroup]="formGroup" class="my-form-group">
+    <div class="form-group">
+        <label class="form-label">Name :</label>
+        <input pInputText type="text" formControlName="name" placeholder="Enter text">
+    </div>
+    <div class="form-group">
+        <label class="form-label">Address :</label>
+        <input pInputText type="text" formControlName="address" placeholder="Enter text">
+    </div>
+    <button pButton type="button" (click)="onSub()">Submit</button>
+</form>
+
+<form [formGroup]="formArray" class="my-form-group">
+    <div formArrayName="cities">
+        <div *ngFor="let city of cities.controls; let i = index" class="form-group">
+            <label class="form-label">City :</label>
+            <input pInputText type="text" [formControlName]="i" placeholder="Enter city">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Name :</label>
+        <input pInputText type="text" id="name" formControlName="name" placeholder="Enter name">
+    </div>
+
+</form>
+<button pButton (click)="onSubmitArray()">Submit</button>
+<button pButton (click)="onEdit()">Edit</button>
+
+
+<form [formGroup]="myFormAddress" class="my-form-group">
+    <div class="form-group">
+      <label class="form-label" for="permanentAddress">Permanent Address:</label>
+      <input type="text" id="permanentAddress" formControlName="permanentAddress" placeholder="Enter permanent address">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="sameAddress">Same Address:</label>
+      <input type="checkbox" id="sameAddress" formControlName="sameAddress" (change)="onSameAddressChange()">
+    </div>
+    <div *ngIf="!myForm.get('sameAddress')?.value" class="form-group">
+      <label class="form-label" for="currentAddress">Current Address:</label>
+      <input type="text" id="currentAddress" formControlName="currentAddress" placeholder="Enter current address">
+    </div>
+    <button type="submit" (click)="onSubmitAdd()">Submit</button>
+</form>
+  
