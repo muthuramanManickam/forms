@@ -8,13 +8,15 @@ import { CwcDetailsComponent } from './cwc-details/cwc-details.component';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormComponent } from './forms/form/form.component'
+import { FormComponent } from './forms/form/form.component';
+import { ParchiComponent } from './parchi/parchi.component'
 @NgModule({
   declarations: [
     AppComponent,
     CwcComponent,
     CwcDetailsComponent,
-    FormComponent
+    FormComponent,
+    ParchiComponent
   ],
   imports: [
     BrowserModule,
