@@ -1,9 +1,13 @@
 <p>home works!</p>
 <ul>
-    <li><a [routerLink]="['/static']">Static Data</a></li>
-    <li><a [routerLink]="['/dynamic']" [state]=product>Dynamic Data</a></li> 
- </ul>
-
-    <p>Id :<input type="text" placeholder="Enter Id" [(ngModel)]="product.id" > </p>
-    <p>name :<input type="text" placeholder="Enter Name" [(ngModel)]="product.name" > </p>
-    <button (click)="gotoDynamic()" >Goto Dynamic Component</button>
+   <li><a [routerLink]="['/static']">Static Data</a></li>
+   <li><a [routerLink]="['/dynamic']" [state]=product>Dynamic Data</a></li>
+</ul>
+<div class="input-field">
+<input pInputText type="text" placeholder="Enter Id" [(ngModel)]="product.id">
+<input pInputText type="text" placeholder="Enter Name" [(ngModel)]="product.name">
+</div>
+<div class="btn">
+   <button pButton (click)="gotoDynamic()"> Dynamic </button>
+   <button pButton (click)="goToStatic()">static</button>
+</div>

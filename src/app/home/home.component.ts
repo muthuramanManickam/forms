@@ -15,7 +15,10 @@ export class HomeComponent {
   gotoDynamic() {
     this.router.navigateByUrl('/dynamic',{state:this.product})
     console.log({state:this.product},'sssss');
-    
+  }
+
+  goToStatic(){
+    this.router.navigateByUrl('/static',{state:this.product})
   }
 
 }
