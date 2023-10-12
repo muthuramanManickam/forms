@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // // import { Cwc } from "../interface";
 import { products } from "../cwc";
 import { Cwc } from '../interface';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cwc',
@@ -23,13 +23,18 @@ export class CwcComponent  implements  OnInit{
   //   },
   // ];
   selectedCountry: string = '';
-  items: any[] = []; // This array will store the loaded data
+  items: any[] = [];
+  rock : any;
+state: any;
 
-  // Define a method to load India data
-
-  constructor(public router:Router) { }
+  constructor(public router:Router , private activatedroute:ActivatedRoute) { }
   ngOnInit(): void {
-   
+   this.activatedroute.data.subscribe(data => {
+    data=this.rock;
+    console.log(data);
+
+    
+   })
   } 
   loadIndiaData() {
     this.selectedCountry = 'India';
